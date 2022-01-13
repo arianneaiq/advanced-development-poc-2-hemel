@@ -194,23 +194,23 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
 renderer.setSize(window.innerWidth, window.innerHeight);
-// ik heb de pixel ratio gezet tussen 1-2 voor voorkomen van performance problemen
+// ik heb de pixel ratio gezet tussen 1-2 voor het voorkomen van performance problemen
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
 const clock = new THREE.Clock();
 
 function animate() {
     window.requestAnimationFrame(animate);
 
-    // de code hieronder niet gebruiken, omdat dit te maken heeft met fps(frame per second). 
-    // de objecten van dit website gaan sneller draaien als de Computer een hoge fps heeft en draaien trager als de computer een lage fps heeft.
+    /* de code hieronder niet gebruiken, omdat dit te maken heeft met de framerate. 
+    de objecten van dit website gaan sneller draaien als de Computer een hoge fps heeft
+     en draaien trager als de computer een lage fps heeft.*/
 
     /* earth.rotation.y -= 0.001;
      moon.rotation.z += 0.01;
      group.rotation.y += 0.005;*/
 
-    //Om te voorkomen dat de website niet te traag of niet te snel reageerd, stellen we onze waarde gelijk aan de tijd m.b.v THREE.Clock()
-
+    /*Om te voorkomen dat de website niet te traag of niet te snel reageerd, 
+    stellen we onze waarde gelijk aan de tijd m.b.v THREE.Clock()*/
 
     const elapsedTime = clock.getElapsedTime();
 
@@ -229,14 +229,6 @@ function animate() {
 
     //Update controls
     controls.update();
-
-
-
-    /*camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 2
-    camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 2
-    camera.position.y = cursor.y * 3
-    camera.lookAt(earth.position)*/
-
 
     renderer.render(scene, camera);
 };
